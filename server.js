@@ -1,4 +1,4 @@
-const io = require('socket.io')("*")//(httpServer, {cors: {origin: "*"}})
+const io = require('socket.io')(5000)//(httpServer, {cors: {origin: "*"}})
 
 io.on('connection', socket => {
   const id = socket.handshake.query.id
