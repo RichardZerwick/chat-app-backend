@@ -1,5 +1,9 @@
+const express = require("express");
+const app = express();
 const port = process.env.PORT || 5000;
 const io = require('socket.io')(port)//(httpServer, {cors: {origin: "*"}})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 io.on('connection', socket => {
   const id = socket.handshake.query.id
